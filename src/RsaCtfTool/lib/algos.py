@@ -40,6 +40,31 @@ from RsaCtfTool.lib.number_theory import invmod, introot
 sys.setrecursionlimit(100000)
 
 
+def somsuk(n):
+    """
+    Implementation based on Kritsanapong Somsuk's 2020 paper:
+    'The new integer factorization algorithm based on Fermat’s
+    factorization algorithm and Euler’s theorem'
+    """
+    u = isqrt(n) << 1
+    c = n
+    while gcd(c, n) > 1:
+        c = randint(2, n - 1)
+    a = powmod(c, -1, n)
+    s = powmod(c, 2, n)
+    phi_aprox = n - u + 1
+    t = powmod(a, phi_aprox, n)
+    while True:
+        if t == 1:
+            x = u >> 1
+            y2 = x * x - n
+            y = isqrt(y2)
+            if y * y == y2:
+                return x - y, x + y
+        t = (t * s) % n
+        u += 2
+
+
 def brent(N):
     """Pollard rho with brent optimizations taken from: https://gist.github.com/ssanin82/18582bf4a1849dfb8afd"""
     if N & 1 == 0:

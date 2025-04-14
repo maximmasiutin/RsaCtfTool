@@ -22,6 +22,8 @@
 
 </div>
 
+ <img src="https://github.com/daedalus/RsaCtfTool/blob/master/logo/logo.jpeg" align="center" width="50%" height="50%"/>
+
 This is not an exploitation tool, this is an utility designed to decrypt data from weak public keys and attempt to recover the corresponding private key. this tool is capable of kleptographic attacks. Also this tool offers a comprehensive range of attack options, enabling users to apply various strategies to crack the RSA encryption.
 The RSA security, at its core, relies on the complexity of the integer factorization problem. This project serves as a valuable resource by combining multiple integer factorization algorithms, effectively enhancing the overall decryption capabilities.
 Please note that this tool is primarily intended for educational purposes. It is essential to manage your expectations, as not every key can be broken within a reasonable timeframe. The complexity of the encryption algorithm may present significant challenges.
